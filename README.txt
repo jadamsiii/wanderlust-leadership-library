@@ -11,6 +11,8 @@ acquisition/index.html
 construction/index.html
 home-transition/index.html
 business-management/index.html
+acquisition/property-walk-recorder-guide/index.html
+acquisition/property-walk-recorder-quick-reference-guide/index.html
 
 Cloudflare Pages will deploy the update automatically after the GitHub commit.
 Do not create additional Cloudflare projects, custom domains, or DNS records for
