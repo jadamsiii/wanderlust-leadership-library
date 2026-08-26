@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5f5f1">
+  <title>Wanderlust Leadership Library</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f5f1;
+      --card: #ffffff;
+      --ink: #202b2f;
+      --muted: #617079;
+      --navy: #11324a;
+      --gold: #a66b1f;
+      --line: #dde1df;
+      --shadow: 0 18px 42px rgba(24, 35, 39, .09);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: radial-gradient(circle at 50% 38%, #ffffff 0, var(--paper) 72%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 48px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-size: .92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible { text-decoration: underline; }
+
+    header { text-align: center; }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 { font-family: Georgia, "Times New Roman", serif; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 1;
+    }
+
+    .rule {
+      width: 72px;
+      height: 2px;
+      margin: 26px auto 22px;
+      background: var(--gold);
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .library-section { margin-top: 48px; }
+
+    .section-heading {
+      margin: 0 0 20px;
+      font-size: 1.85rem;
+      text-align: left;
+    }
+
+    .manual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .manual-card {
+      display: flex;
+      min-height: 310px;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 26px 26px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      display: grid;
+      width: 70px;
+      height: 70px;
+      place-items: center;
+      color: #ffffff;
+      background: var(--navy);
+      border-radius: 50%;
+    }
+
+    .icon svg {
+      width: 34px;
+      height: 34px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .manual-card h2 {
+      margin: 22px 0 10px;
+      font-size: 1.65rem;
+      line-height: 1.15;
+    }
+
+    .manual-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .manual-meta {
+      margin-top: 12px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .manual-link {
+      display: flex;
+      width: 100%;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: auto;
+      padding: 13px 18px;
+      color: #ffffff;
+      background: var(--navy);
+      border-radius: 9px;
+      box-shadow: 0 7px 16px rgba(17, 50, 74, .18);
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .manual-link:hover,
+    .manual-link:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(17, 50, 74, .24);
+    }
+
+    .empty-state {
+      padding: 58px 28px;
+      text-align: center;
+      background: rgba(255, 255, 255, .72);
+      border: 1px dashed rgba(31, 42, 46, .22);
+      border-radius: 18px;
+    }
+
+    .empty-state .icon { margin: 0 auto; }
+
+    .empty-state h2 {
+      margin: 22px 0 10px;
+      font-size: 1.85rem;
+    }
+
+    .empty-state p {
+      max-width: 580px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .manual-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 24px, 1120px); padding-top: 24px; }
+      .manual-grid { grid-template-columns: 1fr; }
+      .manual-card { min-height: 290px; }
+      .section-heading { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="topbar" aria-label="Portal navigation">
+      <a class="back-link" href="https://leadership.wanderlust.properties/">
+        <span aria-hidden="true">←</span> Leadership Portal
+      </a>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Wanderlust Properties</p>
+      <h1>Leadership Library</h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="intro">Online operating manuals, field guides, narration scripts, and leadership reference documents for the Wanderlust Intelligence Platform.</p>
+    </header>
+
+    <section class="library-section" aria-labelledby="manuals-heading">
+      <h2 class="section-heading" id="manuals-heading">Manuals &amp; Guides</h2>
+
+      <!--
+        Add each manual as a .manual-card inside .manual-grid.
+        Each manual should live in its own folder, for example:
+        /manuals/property-walk-recorder/index.html
+      -->
+      <div class="manual-grid" id="manual-grid" hidden></div>
+
+      <div class="empty-state" id="empty-state">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/>
+            <path d="M4 5.5v16M8 7h8M8 11h8"/>
+          </svg>
+        </div>
+        <h2>Manuals Coming Soon</h2>
+        <p>The Library is ready. Approved Wanderlust manuals and guides will appear here as clickable online documents.</p>
+      </div>
+    </section>
+
+    <footer>Authorized Wanderlust leadership access only.</footer>
+  </main>
+</body>
+</html>
