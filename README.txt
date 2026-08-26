@@ -20,3 +20,12 @@ the four category pages.
 
 Future manuals should be placed inside the appropriate category folder, each in
 its own folder with an index.html file.
+
+DESIGN STANDARD
+- Portal landing pages use the largest title treatment.
+- Category pages use the medium title treatment.
+- Full manuals and quick-reference pages use restrained, balanced titles.
+- Manual subtitles are bold and visually secondary to the title.
+- Key instructions use shaded callouts; quick-reference steps use separate rows.
+- All pages use the shared styles.css file to preserve colors, typography,
+  spacing, cards, navigation, and mobile behavior.
