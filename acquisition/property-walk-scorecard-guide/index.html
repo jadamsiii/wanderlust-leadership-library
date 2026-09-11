@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5f5f1">
+  <title>Property Walk Scorecard Quick User Guide | Wanderlust Properties</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .scorecard-guide-page .shell {
+      width: min(1240px, calc(100% - 40px));
+    }
+
+    .scorecard-guide-page .manual-content {
+      padding: clamp(24px, 3vw, 42px);
+    }
+
+    .workflow-grid,
+    .guide-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .workflow-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .workflow-grid li,
+    .guide-card {
+      margin: 0;
+      background: #f4f6f5;
+      border: 1px solid #e5e9e7;
+      border-radius: 10px;
+    }
+
+    .workflow-grid li {
+      padding: 15px 16px;
+      color: #46545b;
+      line-height: 1.48;
+    }
+
+    .step-number {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .guide-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: start;
+      margin-top: 34px;
+    }
+
+    .guide-card {
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(24, 35, 39, .07);
+    }
+
+    .guide-card-header {
+      min-height: 92px;
+      padding: 18px;
+      color: #ffffff;
+      background: var(--navy);
+    }
+
+    .guide-card-header .card-number {
+      display: block;
+      margin-bottom: 5px;
+      color: #e6bd83;
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .guide-card-header h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+      line-height: 1.12;
+    }
+
+    .guide-card-body {
+      padding: 18px;
+    }
+
+    .guide-card-body h3 {
+      margin: 20px 0 8px;
+      color: var(--navy);
+      font-size: .86rem;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .guide-card-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .guide-card-body p,
+    .guide-card-body li {
+      font-size: .91rem;
+      line-height: 1.54;
+    }
+
+    .guide-card-body ul {
+      margin: 0;
+      padding-left: 1.05rem;
+    }
+
+    .guide-card-body li + li {
+      margin-top: 7px;
+    }
+
+    .compact-status {
+      display: grid;
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .compact-status div {
+      padding: 11px 12px;
+      background: #f4f6f5;
+      border: 1px solid #e5e9e7;
+      border-radius: 7px;
+    }
+
+    .compact-status strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-size: .75rem;
+      letter-spacing: .04em;
+    }
+
+    .compact-status p {
+      margin: 0;
+    }
+
+    .guide-card .notice {
+      margin: 18px 0 0;
+      padding: 13px 14px;
+      font-size: .9rem;
+    }
+
+    .field-standard {
+      margin-top: 34px;
+    }
+
+    @media (max-width: 1050px) {
+      .workflow-grid,
+      .guide-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .scorecard-guide-page .shell {
+        width: min(100% - 20px, 1240px);
+      }
+
+      .scorecard-guide-page .manual-content {
+        padding: 20px 14px;
+      }
+
+      .workflow-grid,
+      .guide-grid {
+        gap: 10px;
+      }
+
+      .workflow-grid li {
+        padding: 12px;
+        font-size: .84rem;
+      }
+
+      .guide-card-header {
+        min-height: 84px;
+        padding: 14px;
+      }
+
+      .guide-card-header h2 {
+        font-size: 1.08rem;
+      }
+
+      .guide-card-body {
+        padding: 13px;
+      }
+
+      .guide-card-body p,
+      .guide-card-body li,
+      .guide-card .notice {
+        font-size: .82rem;
+        line-height: 1.48;
+      }
+
+      .guide-card-body ul {
+        padding-left: .95rem;
+      }
+
+      .compact-status div {
+        padding: 9px 10px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .workflow-grid,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .scorecard-guide-page .shell {
+        width: 100%;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .guide-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .guide-card {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="manual-page quick-reference-page scorecard-guide-page">
+  <main class="shell">
+    <nav class="topbar" aria-label="Library navigation"><a class="back-link" href="../"><span aria-hidden="true">←</span> Acquisition Library</a></nav>
+    <header>
+      <p class="eyebrow">Wanderlust Properties / Stage 3</p>
+      <h1>Property Walk Scorecard Quick User Guide</h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="intro">A short field guide for registering a property, completing the scorecard, saving work safely, and creating the MasterMind.</p>
+    </header>
+
+    <article class="manual-content">
+      <aside class="remember-callout" aria-label="Purpose">
+        <span class="label">Purpose</span>
+        <p>The Property Walk Scorecard records the structured construction information gathered during a Stage 3 property walk. Start this tool before opening the Property Walk Recorder. The Scorecard registers the property, creates its Property ID and Google Drive folders, and makes the property available to the Recorder.</p>
+      </aside>
+
+      <section>
+        <h2>Quick Workflow</h2>
+        <ol class="workflow-grid">
+          <li><span class="step-number">Step 1</span>Start a New Walk and enter the property information.</li>
+          <li><span class="step-number">Step 2</span>Register the property and wait for the Property ID confirmation.</li>
+          <li><span class="step-number">Step 3</span>Open the Recorder only after registration succeeds.</li>
+          <li><span class="step-number">Step 4</span>Complete Impression, Exterior, Rooms, Systems, and Allowances.</li>
+          <li><span class="step-number">Step 5</span>Confirm that progress is saved to Google Drive.</li>
+          <li><span class="step-number">Step 6</span>Review the Scorecard and correct any missing or duplicate entries.</li>
+          <li><span class="step-number">Step 7</span>Create the MasterMind after the walk is complete and reviewed.</li>
+        </ol>
+      </section>
+
+      <div class="guide-grid">
+        <section class="guide-card">
+          <div class="guide-card-header">
+            <span class="card-number">01</span>
+            <h2>Start and Register</h2>
+          </div>
+          <div class="guide-card-body">
+            <ul>
+              <li>Open the Property Walk Scorecard and select <strong>New Walk</strong>.</li>
+              <li>Enter the complete property address, published square footage, house type, walk date, and evaluator.</li>
+              <li>Select <strong>Register Property and Continue</strong>.</li>
+              <li>Wait for the green <strong>Registered</strong> status and the Property ID beginning with <strong>WP</strong>.</li>
+              <li>Do not begin the Recorder until registration is confirmed.</li>
+            </ul>
+            <div class="notice"><strong>Registration failed:</strong> Remain on Property Information, check the connection, and select Retry Registration. Do not create a second New Walk for the same address.</div>
+          </div>
+        </section>
+
+        <section class="guide-card">
+          <div class="guide-card-header">
+            <span class="card-number">02</span>
+            <h2>Complete the Scorecard</h2>
+          </div>
+          <div class="guide-card-body">
+            <p>Use the navigation buttons in order. You may return to any section to make corrections.</p>
+
+            <h3>Sections</h3>
+            <ul>
+              <li><strong>Impression:</strong> Curb appeal, parking, yard, neighbors, and first-impression notes.</li>
+              <li><strong>Exterior:</strong> Roofing, gutters, fascia, siding, soffit, washing, paint, doors, shutters, and notes.</li>
+              <li><strong>Rooms:</strong> Measurements, ceiling and wall scope, flooring, doors, trim, fixtures, windows, and notes.</li>
+              <li><strong>Systems:</strong> HVAC, water heater, electrical service, and general landscape, electrical, and plumbing allowances.</li>
+              <li><strong>Allowances:</strong> Unusual work not covered by standard fields, such as structural repair or deck replacement.</li>
+            </ul>
+
+            <h3>Room Entry Rules</h3>
+            <ul>
+              <li>Use one room tab at a time. Switching rooms saves the current room locally.</li>
+              <li>Enter length and width for every actual room and check the calculated square footage.</li>
+              <li>Record ceiling and wall drywall, texture, paint coats, and primer independently.</li>
+              <li>Use 0, 10, 25, 50, or 100 percent for partial-scope selections.</li>
+              <li>Enter each room’s total windows only once.</li>
+              <li>Verify Kitchen cabinet, countertop, backsplash, handle, and scope quantities.</li>
+              <li>Verify each Bathroom’s vanity, faucets, tub, surround, tile quantity, toilet, mirrors, and accessories.</li>
+              <li>Do not duplicate a room name. Rename or remove the existing room instead.</li>
+            </ul>
+
+            <h3>Good Field Practice</h3>
+            <ul>
+              <li>Use ordinary room names such as Bedroom 1 and Bathroom 1.</li>
+              <li>Check room calculations immediately.</li>
+              <li>Use notes for visible conditions that do not fit a structured field.</li>
+              <li>Select Save Progress before a long interruption or before leaving the property.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="guide-card">
+          <div class="guide-card-header">
+            <span class="card-number">03</span>
+            <h2>Saving and Recovery</h2>
+          </div>
+          <div class="guide-card-body">
+            <p>The Scorecard saves each walk separately on the device and, after registration, checkpoints it to Google Drive. Watch the save message in the header.</p>
+
+            <h3>Save Status</h3>
+            <div class="compact-status">
+              <div><strong>Saved to Google Drive</strong><p>The latest confirmed checkpoint is safely stored in Drive.</p></div>
+              <div><strong>Saving to Google Drive</strong><p>Keep the tab open until the save finishes.</p></div>
+              <div><strong>Drive sync pending</strong><p>The device copy is safe, but Drive has not confirmed the latest changes.</p></div>
+              <div><strong>Offline — Drive sync pending</strong><p>Continue the walk. The device copy remains saved and will retry after reconnection.</p></div>
+              <div><strong>Drive save failed — device copy is safe</strong><p>Stop before closing the app. Restore the connection and use Save Progress again.</p></div>
+              <div><strong>Drive version conflict</strong><p>Do not overwrite either copy. Use Open Existing and review the device-versus-Drive choices.</p></div>
+            </div>
+
+            <h3>Save Progress</h3>
+            <p>Select Save Progress for an immediate checkpoint. For a registered property, wait for <strong>Progress confirmed in Google Drive</strong> before closing the tab.</p>
+
+            <h3>Open Existing Safely</h3>
+            <ul>
+              <li>Select Open Existing and choose the property by address and Property ID.</li>
+              <li>If device and Drive copies match, the saved walk opens normally.</li>
+              <li>If they differ, the Scorecard will not replace either copy automatically.</li>
+              <li>Choose Continue Device Copy when the device contains current field work.</li>
+              <li>Choose Download Device Recovery JSON before opening Drive when you want an extra backup.</li>
+              <li>Choose Archive Device Copy and Open Drive Copy only when you intentionally want the Drive version.</li>
+            </ul>
+
+            <h3>If the Browser Closes</h3>
+            <p>Reopen the Scorecard in the same browser and use Open Existing. Do not select New Walk for the same address. If directed by the system administrator, open the Scorecard recovery page on the same device and browser and download the recovery JSON before refreshing or replacing anything.</p>
+          </div>
+        </section>
+
+        <section class="guide-card">
+          <div class="guide-card-header">
+            <span class="card-number">04</span>
+            <h2>Review and Submit</h2>
+          </div>
+          <div class="guide-card-body">
+            <h3>Review Steps</h3>
+            <ol>
+              <li>Open Review and select Review Scorecard.</li>
+              <li>Read the required-answer warning and correct anything missing.</li>
+              <li>Confirm that no room name appears twice and the total measured square footage is reasonable.</li>
+              <li>Recheck kitchen quantities, bathroom selections, and window counts.</li>
+              <li>Review the calculated construction categories and Special Allowances.</li>
+              <li>Check the confirmation box.</li>
+              <li>Select <strong>Create Test MasterMind</strong> and keep the tab open until completion is confirmed.</li>
+            </ol>
+
+            <h3>Before Creating the MasterMind</h3>
+            <ul>
+              <li>The header shows Saved to Google Drive.</li>
+              <li>The Property ID still appears as Registered.</li>
+              <li>Kitchen, bathroom, and window information matches the room entries.</li>
+              <li>Each physical room appears once.</li>
+              <li>The measured room total is believable beside the published square footage.</li>
+              <li>Structural or unusual work is recorded in notes or a Special Allowance.</li>
+            </ul>
+
+            <h3>If Submission Stops</h3>
+            <p>Read the Review-page message. Do not start another walk or clear browser data. Confirm the internet connection, select Save Progress, and retry only after the latest Drive save is confirmed. If the error remains, take a screenshot of the complete message and notify the Wanderlust system administrator.</p>
+          </div>
+        </section>
+      </div>
+
+      <aside class="remember-callout field-standard" aria-label="Field operating standard">
+        <span class="label">Field Operating Standard</span>
+        <p>Start the Scorecard first. Register the property before opening the Recorder. Complete one room at a time, watch the save status, review all critical quantities, and create the MasterMind only after the final Drive checkpoint succeeds.</p>
+      </aside>
+    </article>
+
+    <footer>Authorized Wanderlust leadership access only.</footer>
+  </main>
+</body>
+</html>
