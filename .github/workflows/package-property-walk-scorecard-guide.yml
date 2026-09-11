@@ -1,0 +1,28 @@
+name: Package Property Walk Scorecard Guide
+
+on:
+  push:
+    branches:
+      - property-walk-scorecard-guide-2026-09-11
+    paths:
+      - .github/workflows/package-property-walk-scorecard-guide.yml
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out guide source
+        uses: actions/checkout@v4
+
+      - name: Build GitHub-ready ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wanderlust-property-walk-scorecard-guide
+          path: |
+            acquisition/index.html
+            acquisition/property-walk-scorecard-guide/index.html
+          if-no-files-found: error
+          retention-days: 7
